@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+                <style type="text/css">
+                    .ui-layout-north {
+                        z-index:20 !important;
+                        overflow:visible !important;;
+                    }
+
+                    .ui-layout-north .ui-layout-unit-content {
+                        overflow:visible !important;
+                    }
+                    .ui-widget {
+                        font-size: 12px !important;
+                    }
+                </style>
+            </f:facet>
+        </h:head>
+
+        <p:layout fullPage="true">
+
+            <p:layoutUnit position="center">
+
+                <p:panelGrid style="margin-top:20px;width:100%">
+                    <f:facet name="header">
+                        <p:row>
+                            <p:column colspan="7">1995-96 NBA Playoffs</p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column colspan="2">Conf. Semifinals</p:column>
+                            <p:column colspan="2">Conf. Finals</p:column>
+                            <p:column colspan="2">NBA Finals</p:column>
+                            <p:column>Champion</p:column>
+                        </p:row>
+                    </f:facet>
+
+                    <p:row>
+                        <p:column style="font-weight: bold;">Seattle</p:column>
+                        <p:column style="font-weight: bold;">4</p:column>
+
+                        <p:column rowspan="2" style="font-weight: bold;">Seattle</p:column>
+                        <p:column rowspan="2" style="font-weight: bold;">4</p:column>
+
+                        <p:column rowspan="5">Seattle</p:column>
+                        <p:column rowspan="5">2</p:column>
+
+                        <p:column rowspan="11" style="font-weight: bold;">Chicago</p:column>
+                    </p:row>
+                    <p:row>
+                        <p:column>Houston</p:column>
+                        <p:column >0</p:column>
+                    </p:row>
+
+                    <p:row>
+                        <p:column colspan="4" styleClass="ui-widget-header">
+                            <p:spacer height="0"/>
+                        </p:column>
+                    </p:row>
+
+                    <p:row>
+                        <p:column style="font-weight: bold;">Utah</p:column>
+                        <p:column style="font-weight: bold;">4</p:column>
+
+                        <p:column rowspan="2">Utah</p:column>
+                        <p:column rowspan="2">3</p:column>
+                    </p:row>
+
+                    <p:row>
+                        <p:column>San Antonio</p:column>
+                        <p:column >2</p:column>
+                    </p:row>
+
+                    <p:row>
+                        <p:column colspan="6" styleClass="ui-widget-header">
+                            <p:spacer height="0"/>
+                        </p:column>
+                    </p:row>
+
+                    <p:row>
+                        <p:column style="font-weight: bold;">Chicago</p:column>
+                        <p:column style="font-weight: bold;">4</p:column>
+
+                        <p:column rowspan="2" style="font-weight: bold;">Chicago</p:column>
+                        <p:column rowspan="2" style="font-weight: bold;">4</p:column>
+
+                        <p:column rowspan="5" style="font-weight: bold;">Chicago</p:column>
+                        <p:column rowspan="5" style="font-weight: bold;">4</p:column>
+                    </p:row>
+
+                    <p:row>
+                        <p:column>New York</p:column>
+                        <p:column >1</p:column>
+                    </p:row>
+
+                    <p:row>
+                        <p:column colspan="4" styleClass="ui-widget-header">
+                            <p:spacer height="0"/>
+                        </p:column>
+                    </p:row>
+
+                    <p:row>
+                        <p:column>Atlanta</p:column>
+                        <p:column >1</p:column>
+
+                        <p:column rowspan="2">Orlando</p:column>
+                        <p:column rowspan="2">0</p:column>
+                    </p:row>
+
+                    <p:row>
+                        <p:column style="font-weight: bold;">Orlando</p:column>
+                        <p:column style="font-weight: bold;">4</p:column>
+                    </p:row>
+
+
+                    <f:facet name="footer">
+                        <p:row>
+                            <p:column  colspan="4" style="text-align: right">
+                                Finals MVP
+                            </p:column>
+                            <p:column  colspan="3" rowspan="3">
+                                Michael Jordan (Chicago)
+                            </p:column>
+                        </p:row>
+
+                        <p:row>
+                            <p:column  colspan="4" style="text-align: right">
+                                Season MVP
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column  colspan="4" style="text-align: right">
+                                Top Scorer
+                            </p:column>
+                        </p:row>
+                    </f:facet>
+                </p:panelGrid>
+
+            </p:layoutUnit>
+
+            <p:layoutUnit position="north" resizable="true" closable="true" collapsible="true">
+                <img src="./img/s.jpg" height="70" /> ERP 
+                <h:form>
+
+                    <p:growl id="messages"/>
+                    <p:menubar >
+                        <p:submenu label="Главная" icon="ui-icon-document">
+                            <p:submenu label="New" icon="ui-icon-contact">
+                                <p:menuitem value="Project" url="#" />
+                                <p:menuitem value="Other" url="#" />
+                            </p:submenu>
+                            <p:menuitem value="Open" url="#" />
+                            <p:separator />
+                            <p:menuitem value="Quit" url="#" />
+                        </p:submenu>
+
+                        <p:submenu label="Продажи" icon="ui-icon-pencil">
+                            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+                            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                        </p:submenu>
+
+                        <p:submenu label="Складской учет" icon="ui-icon-pencil">
+                            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+                            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                        </p:submenu>
+
+                        <p:submenu label="Управление клиентами" icon="ui-icon-pencil">
+                            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+                            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                        </p:submenu>
+
+                        <p:submenu label="Статистика" icon="ui-icon-pencil">
+                            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+                            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                        </p:submenu>
+
+                        <p:submenu label="Help" icon="ui-icon-help">
+                            <p:menuitem value="Contents" url="#" />
+                            <p:submenu label="Search" icon="ui-icon-search">
+                                <p:submenu label="Text">
+                                    <p:menuitem value="Workspace" url="#" />
+                                </p:submenu>
+                                <p:menuitem value="File" url="#" />
+                            </p:submenu>
+                        </p:submenu>
+
+                        <p:submenu label="Actions" icon="ui-icon-gear">
+                            <p:submenu label="Ajax" icon="ui-icon-refresh">
+                                <p:menuitem value="Save" icon="ui-icon-disk" />
+                                <p:menuitem value="Update" icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu>
+                            <p:submenu label="Non-Ajax" icon="ui-icon-newwin">
+                                <p:menuitem value="Delete"  icon="ui-icon-close" />
+                            </p:submenu>
+                        </p:submenu>
+
+                        <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
+                    </p:menubar>
+
+                </h:form>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">
+                <h:outputText value="South unit content." />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="west" size="200" header="Left" resizable="true" closable="true" collapsible="true">
+                <p:menu>
+                    <p:submenu label="Resources">
+                        <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
+                        <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html" />
+                        <p:menuitem value="Forum" url="http://forum.primefaces.org/" />
+                        <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
+
+                    </p:submenu>
+
+                </p:menu>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">
+                <h:outputText value="Right unit content." />
+            </p:layoutUnit>
+
+        </p:layout>
+
+    </f:view>
+</html>
+
