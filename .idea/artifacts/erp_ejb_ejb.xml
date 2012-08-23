@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="ejb-jar" name="erp-ejb:ejb">
-    <output-path>$PROJECT_DIR$/erp-ejb/target</output-path>
-    <root id="archive" name="erp-ejb-1.0-SNAPSHOT.jar">
-      <element id="artifact" artifact-name="erp-ejb:ejb exploded" />
-    </root>
-  </artifact>
-</component>
