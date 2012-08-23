@@ -83,7 +83,7 @@
       <file leaf-file-name="index.xhtml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/erp-web/src/main/webapp/index.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="32" selection-start="457" selection-end="457" vertical-scroll-proportion="0.20361991">
+            <state line="10" column="18" selection-start="371" selection-end="371" vertical-scroll-proportion="0.16968326">
               <folding />
             </state>
           </provider>
@@ -510,7 +510,11 @@
       <created>1345708542381</created>
       <updated>1345708542381</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1345708631152</created>
+      <updated>1345708631152</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -648,7 +652,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/erp-web/src/main/webapp/index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="32" selection-start="457" selection-end="457" vertical-scroll-proportion="0.20361991">
+        <state line="10" column="18" selection-start="371" selection-end="371" vertical-scroll-proportion="0.16968326">
           <folding />
         </state>
       </provider>
