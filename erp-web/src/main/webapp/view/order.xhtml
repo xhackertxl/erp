@@ -30,36 +30,57 @@
             <p:layoutUnit position="center">
                 <h:form>
 
-                    <p:growl id="growl" showDetail="true" />
-
-                    <p:dashboard id="board" model="#{dashboardBean.model}">
-                        <p:ajax event="reorder" listener="#{dashboardBean.handleReorder}" update="growl" />
-
-                        <p:panel id="sports" header="Продажи" style="width:300px;margin-left:20px;">
-                            <p:lineChart id="filled" value="#{chartBean.categoryModel}" legendPosition="ne" fill="true"
-                                         title="Filled" style="height:300px;margin-top:20px" xaxisLabel="Year" yaxisLabel="Births" />
-
-                        </p:panel>
-
-                        <p:panel id="finance" header="Finance" style="width:300px;margin-left:20px;">
-                            <h:outputText value="Finance Content" />
-                        </p:panel>
-
-                        <p:panel id="lifestyle" header="Lifestyle" style="width:300px;margin-left:20px;">
-                            <p:lineChart id="filled2" value="#{chartBean.categoryModel}" legendPosition="ne" fill="true"
-                                         title="Filled" style="height:300px;margin-top:20px" xaxisLabel="Year" yaxisLabel="Births" />
-                        </p:panel>
-
-                        <p:panel id="weather" header="Weather" style="width:300px;margin-left:20px;">
-                            <h:outputText value="Weather Content" />
-                        </p:panel>
-
-                        <p:panel id="politics" header="Politics" style="width:300px;margin-left:20px;">
-                            <p:lineChart id="filled3" value="#{chartBean.categoryModel}" legendPosition="ne" fill="true"
-                                         title="Filled" style="height:300px;margin-top:20px" xaxisLabel="Year" yaxisLabel="Births" />
-                        </p:panel>
-                    </p:dashboard>
-
+                    <p:fieldset legend="Данные заказа">
+                        <p:panelGrid>                           
+                            <p:row>  
+                                <p:column >
+                                    <h:outputLabel style="width:200px;" for="firstname" value="Номер заказа " />
+                                    <p:inputText id="firstname" value="" label="Firstname" />
+                                </p:column>  
+                                <p:column >
+                                    <h:outputLabel for="firstname1" value="Дата отгрузки " />
+                                    <p:calendar value="#{calendarBean.date3}" navigator="true" id="popupButtonCal" showOn="button" />
+                                </p:column>
+                                <p:column>                                
+                                    <h:outputLabel for="firstname167" value="Время отгрузки от: " />
+                                    <p:calendar value="#{calendarBean.date2}" pattern="HH:mm" minHour="9" maxHour="18" maxlength="4" stepMinute="15" timeOnly="true" />
+                                </p:column>
+                                <p:column>                                
+                                    <h:outputLabel for="firstname167" value="Время отгрузки до: " />
+                                    <p:calendar value="#{calendarBean.date2}" pattern="HH:mm" minHour="9" maxHour="21" maxlength="4" stepMinute="15" timeOnly="true" />
+                                </p:column>
+                            </p:row>                            
+                            <p:row>  
+                                <p:column >
+                                    <h:outputLabel for="Контрагент" value="Контрагент " />
+                                    <p:inputText id="firstname11" value="" label="Firstname" />
+                                </p:column>
+                                <p:column >
+                                    <h:outputLabel for="Адрес отгрузки" value="Адрес отгрузки " />
+                                    <p:inputText id="firstname1534" value="" label="Firstname" />
+                                </p:column>  
+                                <p:column >
+                                    <h:outputLabel for="Организация" value="Организация " />
+                                    <p:inputText id="surname1" value="" required="true" label="Surname"/>
+                                </p:column>
+                                <p:column >
+                                    <h:outputLabel for="Стоимость доставки" value="Стоимость доставки " />
+                                    <p:inputText id="firstname2" value="" label="Firstname" />
+                                </p:column>
+                            </p:row>                            
+                            <p:row> 
+                                <p:column >
+                                    <h:outputLabel for="Комментарий" value="Комментарий " />
+                                    <p:inputTextarea rows="5" cols="30" counter="counter" maxlength="255"       
+                                                     counterTemplate="{0} символов осталось" autoResize="false"/><br/> 
+                                    <h:outputText id="counter" /> 
+                                </p:column>
+                            </p:row>                            
+                        </p:panelGrid>
+                    </p:fieldset>
+                    <p:fieldset legend="Данные заказа">
+                        
+                    </p:fieldset>
                 </h:form>
 
             </p:layoutUnit>
@@ -86,65 +107,7 @@
 
             <p:layoutUnit position="north" resizable="true" closable="true" collapsible="true">
                 <img src="./img/s.jpg" height="70" /> ERP 
-                <h:form>
-
-                    <p:growl id="messages"/>
-                    <p:menubar >
-                        <p:submenu label="Главная" icon="ui-icon-document">
-
-                        </p:submenu>
-
-                        <p:submenu label="Заказы" icon="ui-icon-pencil">
-                            <p:menuitem value="Розничный заказ" url="#" icon="ui-icon-arrowreturnthick-1-w" />
-                            <p:menuitem value="Оптовый заказ" url="#" icon="ui-icon-arrowreturnthick-1-e" />
-                        </p:submenu>
-
-                        <p:submenu label="Складской учет" icon="ui-icon-pencil">
-                            <p:menuitem value="Номенклатура" url="#" icon="ui-icon-arrowreturnthick-1-w" />
-                            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
-                            <p:submenu label="New" icon="ui-icon-contact">
-                                <p:menuitem value="Project" url="#" />
-                                <p:menuitem value="Other" url="#" />
-                            </p:submenu>
-                            <p:menuitem value="Open" url="#" />
-                            <p:separator />
-                            <p:menuitem value="Quit" url="#" />
-                        </p:submenu>
-
-                        <p:submenu label="Управление клиентами" icon="ui-icon-pencil">
-                            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
-                            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
-                        </p:submenu>
-
-                        <p:submenu label="Статистика" icon="ui-icon-document">
-                            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
-                            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
-                        </p:submenu>
-
-                        <p:submenu label="Help" icon="ui-icon-help">
-                            <p:menuitem value="Contents" url="#" />
-                            <p:submenu label="Search" icon="ui-icon-search">
-                                <p:submenu label="Text">
-                                    <p:menuitem value="Workspace" url="#" />
-                                </p:submenu>
-                                <p:menuitem value="File" url="#" />
-                            </p:submenu>
-                        </p:submenu>
-
-                        <p:submenu label="Actions" icon="ui-icon-gear">
-                            <p:submenu label="Ajax" icon="ui-icon-refresh">
-                                <p:menuitem value="Save" icon="ui-icon-disk" />
-                                <p:menuitem value="Update" icon="ui-icon-arrowrefresh-1-w" />
-                            </p:submenu>
-                            <p:submenu label="Non-Ajax" icon="ui-icon-newwin">
-                                <p:menuitem value="Delete"  icon="ui-icon-close" />
-                            </p:submenu>
-                        </p:submenu>
-
-                        <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
-                    </p:menubar>
-
-                </h:form>
+                <ui:include src="./mainMenu.xhtml" />                
             </p:layoutUnit>
 
             <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">

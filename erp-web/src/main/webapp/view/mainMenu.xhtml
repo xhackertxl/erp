@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:form>
+
+            <p:growl id="messages"/>
+            <p:menubar >
+                <p:submenu label="Главная" icon="ui-icon-document">
+
+                </p:submenu>
+
+                <p:submenu label="Заказы" icon="ui-icon-pencil">
+                    <p:menuitem value="Розничный заказ" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+                    <p:menuitem value="Оптовый заказ" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                </p:submenu>
+
+                <p:submenu label="Складской учет" icon="ui-icon-pencil">
+                    <p:menuitem value="Номенклатура" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+                    <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                    <p:submenu label="New" icon="ui-icon-contact">
+                        <p:menuitem value="Project" url="#" />
+                        <p:menuitem value="Other" url="#" />
+                    </p:submenu>
+                    <p:menuitem value="Open" url="#" />
+                    <p:separator />
+                    <p:menuitem value="Quit" url="#" />
+                </p:submenu>
+
+                <p:submenu label="Управление клиентами" icon="ui-icon-pencil">
+                    <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+                    <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                </p:submenu>
+
+                <p:submenu label="Статистика" icon="ui-icon-document">
+                    <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+                    <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                </p:submenu>
+
+                <p:submenu label="Help" icon="ui-icon-help">
+                    <p:menuitem value="Contents" url="#" />
+                    <p:submenu label="Search" icon="ui-icon-search">
+                        <p:submenu label="Text">
+                            <p:menuitem value="Workspace" url="#" />
+                        </p:submenu>
+                        <p:menuitem value="File" url="#" />
+                    </p:submenu>
+                </p:submenu>
+
+                <p:submenu label="Actions" icon="ui-icon-gear">
+                    <p:submenu label="Ajax" icon="ui-icon-refresh">
+                        <p:menuitem value="Save" icon="ui-icon-disk" />
+                        <p:menuitem value="Update" icon="ui-icon-arrowrefresh-1-w" />
+                    </p:submenu>
+                    <p:submenu label="Non-Ajax" icon="ui-icon-newwin">
+                        <p:menuitem value="Delete"  icon="ui-icon-close" />
+                    </p:submenu>
+                </p:submenu>
+
+                <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
+            </p:menubar>
+
+        </h:form>
+
+    </f:view>
+</html>
+
