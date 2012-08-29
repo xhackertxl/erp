@@ -8,6 +8,7 @@ import java.io.Serializable;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import org.primefaces.event.DashboardReorderEvent;
 import org.primefaces.model.DashboardColumn;
@@ -16,7 +17,7 @@ import org.primefaces.model.DefaultDashboardColumn;
 import org.primefaces.model.DefaultDashboardModel;
 
 @ManagedBean(name="dashboardBean")
-@RequestScoped
+@ViewScoped
 public class DashboardBean implements Serializable {
     
     private DashboardModel model;

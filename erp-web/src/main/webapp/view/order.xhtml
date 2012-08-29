@@ -28,10 +28,11 @@
         </h:head>
         <p:layout fullPage="true">
             <p:layoutUnit position="center">
-                <h:form>
 
-                    <p:fieldset legend="Данные заказа">
-                        <p:panelGrid>                           
+
+                <p:fieldset legend="Данные заказа">
+                    <h:form>
+                        <p:panelGrid style="text-align:right;width: 100%">                           
                             <p:row>  
                                 <p:column >
                                     <h:outputLabel style="width:200px;" for="firstname" value="Номер заказа " />
@@ -39,7 +40,7 @@
                                 </p:column>  
                                 <p:column >
                                     <h:outputLabel for="firstname1" value="Дата отгрузки " />
-                                    <p:calendar value="#{calendarBean.date3}" navigator="true" id="popupButtonCal" showOn="button" />
+                                    <p:calendar value="#{calendarBean.date3}" navigator="true" id="popupButtonCal"/>
                                 </p:column>
                                 <p:column>                                
                                     <h:outputLabel for="firstname167" value="Время отгрузки от: " />
@@ -69,19 +70,61 @@
                                 </p:column>
                             </p:row>                            
                             <p:row> 
-                                <p:column >
+                                <p:column colspan="4" >
                                     <h:outputLabel for="Комментарий" value="Комментарий " />
-                                    <p:inputTextarea rows="5" cols="30" counter="counter" maxlength="255"       
+                                    <p:inputTextarea rows="10" style="width:100%" counter="counter" maxlength="255"       
                                                      counterTemplate="{0} символов осталось" autoResize="false"/><br/> 
                                     <h:outputText id="counter" /> 
                                 </p:column>
                             </p:row>                            
                         </p:panelGrid>
-                    </p:fieldset>
-                    <p:fieldset legend="Данные заказа">
-                        
-                    </p:fieldset>
-                </h:form>
+                    </h:form>
+                </p:fieldset>
+                <p:fieldset legend="Корзина заказа">
+                    <p:commandButton value="Добавить товар" icon="ui-icon-disk" title="Добавить товар" style="margin-bottom:10px;" /> 
+                    <h:form>  
+                        <p:dataTable id="basic" var="car" value="#{carBean.carsSmall}" editable="true">  
+                            <p:column id="modelHeader">  
+                                <p:cellEditor> 
+                                    <f:facet name="header">  
+                                        Model  
+                                    </f:facet>  
+                                    <f:facet name="output">  
+                                        <h:outputText value="#{car.model}" />
+                                    </f:facet>                                    
+                                    <f:facet name="input">  
+                                        <p:inputText value="#{car.model}" style="width:100%"/>  
+                                    </f:facet>
+                                </p:cellEditor> 
+                            </p:column>  
+
+                            <p:column>  
+                                <f:facet name="header">  
+                                    Year  
+                                </f:facet>  
+                                <h:outputText value="#{car.year}" />  
+                            </p:column>  
+
+                            <p:column>  
+                                <f:facet name="header">  
+                                    Manufacturer  
+                                </f:facet>  
+                                <h:outputText value="#{car.manufacturer}" />  
+                            </p:column>  
+
+                            <p:column>  
+                                <f:facet name="header">  
+                                    Color  
+                                </f:facet>  
+                                <h:outputText value="#{car.color}" />  
+                            </p:column> 
+                            <p:column headerText="Options" style="width:50px">  
+                                <p:rowEditor />  
+                            </p:column>
+                        </p:dataTable>  
+                    </h:form>  
+                </p:fieldset>
+
 
             </p:layoutUnit>
             <p:layoutUnit position="west" size="200" header="Быстрое меню" resizable="true" closable="true" collapsible="true">

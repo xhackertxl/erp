@@ -7,11 +7,12 @@ package com.veralex;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import org.primefaces.model.chart.CartesianChartModel;
 import org.primefaces.model.chart.ChartSeries;
 
 @ManagedBean(name="chartBean")
-@RequestScoped
+@ViewScoped
 public class ChartBean implements Serializable {
 
     private CartesianChartModel categoryModel;

@@ -8,7 +8,7 @@ package com.veralex;
  *
  * @author mac
  */
-class Car {
+public class Car {
     
     private String model;
     private int year;
@@ -26,8 +26,8 @@ class Car {
         return model;
     }
 
-    public String getColor() {
-        return color;
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public int getYear() {
@@ -46,13 +46,20 @@ class Car {
         this.manufacturer = manufacturer;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 37 * hash + (this.model != null ? this.model.hashCode() : 0);
-        hash = 37 * hash + this.year;
-        hash = 37 * hash + (this.manufacturer != null ? this.manufacturer.hashCode() : 0);
-        hash = 37 * hash + (this.color != null ? this.color.hashCode() : 0);
+        hash = 67 * hash + (this.model != null ? this.model.hashCode() : 0);
+        hash = 67 * hash + this.year;
+        hash = 67 * hash + (this.manufacturer != null ? this.manufacturer.hashCode() : 0);
         return hash;
     }
 
@@ -84,5 +91,7 @@ class Car {
     public String toString() {
         return "Car{" + "model=" + model + ", year=" + year + ", manufacturer=" + manufacturer + ", color=" + color + '}';
     }
+
+    
     
 }
