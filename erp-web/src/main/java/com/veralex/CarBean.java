@@ -11,6 +11,7 @@ import java.util.UUID;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.model.SelectItem;
 
 /**
  *
@@ -23,6 +24,7 @@ public class CarBean implements Serializable {
     private final static String[] colors;
     private final static String[] manufacturers;
     private List<Car> carsSmall;
+    private SelectItem[] manufacturerOptions;
 
     static {
         colors = new String[10];
@@ -54,6 +56,7 @@ public class CarBean implements Serializable {
         carsSmall = new ArrayList<Car>();
 
         populateRandomCars(carsSmall, 9);
+        manufacturerOptions = createFilterOptions(manufacturers); 
     }
 
     private void populateRandomCars(List<Car> list, int size) {
@@ -81,4 +84,19 @@ public class CarBean implements Serializable {
     private String getRandomModel() {
         return UUID.randomUUID().toString().substring(0, 8);
     }
+    
+    private SelectItem[] createFilterOptions(String[] data)  {  
+        SelectItem[] options = new SelectItem[data.length + 1];  
+  
+        options[0] = new SelectItem("", "Select");  
+        for(int i = 0; i < data.length; i++) {  
+            options[i + 1] = new SelectItem(data[i], data[i]);  
+        }  
+  
+        return options;  
+    }  
+  
+    public SelectItem[] getManufacturerOptions() {  
+        return manufacturerOptions;  
+    }  
 }

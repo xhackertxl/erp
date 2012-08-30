@@ -26,6 +26,37 @@
                 </style>
             </f:facet>
         </h:head>
+        <p:dialog id="modalDialog" header="Товарная позиция" widgetVar="dlg2" modal="true" height="500" width="900">  
+            <h:form>
+                <p:panelGrid style="text-align:right;width:50%;margin:0 auto;" id="dialogForm">                           
+                    <p:row>  
+                        <p:column>
+                            <h:outputLabel style="width:200px;" for="goodsId" value="Товар " />
+                            <p:inputText id="goodsId" label="goodsId" onclick="dlg3.show();" />
+                            <p:commandButton icon="ui-icon-disk" inline="true" />
+                        </p:column>  
+                                               
+                    </p:row>
+                    <p:row>
+                        <p:column>
+                            <h:outputLabel for="quantity" value="Кол-во " />
+                            <p:inputText id="quantity" value="#{goodsBean.quantity}" label="quantity"/>
+                            <p:commandButton id="cmdButton" icon="ui-icon-disk" inline="true"  action="${goodsBean.setClearValues()}" update="quantity"  /> 
+                        </p:column> 
+                    </p:row>
+                    <p:row>
+                        <p:column>
+                            <h:outputText value="Кол-во: 10" /> 
+                        </p:column> 
+                    </p:row>
+                    <p:row>
+                        <p:column>
+                            <h:outputText value="На сумму: 1000" />
+                        </p:column> 
+                    </p:row> 
+                </p:panelGrid>
+            </h:form>
+        </p:dialog>
         <p:layout fullPage="true">
             <p:layoutUnit position="center">
 
@@ -81,7 +112,8 @@
                     </h:form>
                 </p:fieldset>
                 <p:fieldset legend="Корзина заказа">
-                    <p:commandButton value="Добавить товар" icon="ui-icon-disk" title="Добавить товар" style="margin-bottom:10px;" /> 
+                    <p:commandButton value="Добавить товар" icon="ui-icon-disk" title="Добавить товар" style="margin-bottom:10px;" onclick="dlg2.show();" /> 
+
                     <h:form>  
                         <p:dataTable id="basic" var="car" value="#{carBean.carsSmall}" editable="true">  
                             <p:column id="modelHeader">  
@@ -128,19 +160,7 @@
 
             </p:layoutUnit>
             <p:layoutUnit position="west" size="200" header="Быстрое меню" resizable="true" closable="true" collapsible="true">
-                <h:form>
-                    <p:menu>
-                        <p:submenu style="height: 0px;border: 0px solid #ffffff;">
-                            <p:menuitem value="Оформление заказа" url="#" />
-                            <p:menuitem value="Статистика" url="#" />
-                            <p:menuitem value="Клиенты" url="#" />
-                            <p:menuitem value="Пользователи" url="#" />
-                            <p:menuitem value="И т.д." url="#" />
-
-                        </p:submenu>
-
-                    </p:menu>
-                </h:form>
+                <ui:include src="./leftMenu.xhtml" />
             </p:layoutUnit>
 
             <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">
@@ -153,7 +173,7 @@
                 <ui:include src="./mainMenu.xhtml" />                
             </p:layoutUnit>
 
-            <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">
+            <p:layoutUnit position="east" size="200" header="Right" resizable="true" visible="false" closable="true" collapsible="true" effect="drop">
                 <h:outputText value="Right unit content." />
             </p:layoutUnit>
 

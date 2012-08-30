@@ -64,19 +64,7 @@
 
             </p:layoutUnit>
             <p:layoutUnit position="west" size="200" header="Быстрое меню" resizable="true" closable="true" collapsible="true">
-                <h:form>
-                    <p:menu>
-                        <p:submenu style="height: 0px;border: 0px solid #ffffff;">
-                            <p:menuitem value="Оформление заказа" url="#" />
-                            <p:menuitem value="Статистика" url="#" />
-                            <p:menuitem value="Клиенты" url="#" />
-                            <p:menuitem value="Пользователи" url="#" />
-                            <p:menuitem value="И т.д." url="#" />
-
-                        </p:submenu>
-
-                    </p:menu>
-                </h:form>
+                <ui:include src="./leftMenu.xhtml" />
             </p:layoutUnit>
 
             <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">
@@ -89,7 +77,7 @@
                 <ui:include src="./mainMenu.xhtml" />
             </p:layoutUnit>
 
-            <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">
+            <p:layoutUnit position="east" size="200" header="Right" resizable="true" visible="false" closable="true" collapsible="true" effect="drop">
                 <h:outputText value="Right unit content." />
             </p:layoutUnit>
 
