@@ -4,6 +4,7 @@
  */
 package com.veralex;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -11,7 +12,7 @@ import javax.faces.bean.ViewScoped;
 
 @ManagedBean(name="calendarBean")
 @ViewScoped
-public class CalendarBean {
+public class CalendarBean implements Serializable{
    
     private Date date1;  
       

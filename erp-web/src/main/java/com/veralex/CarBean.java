@@ -25,6 +25,7 @@ public class CarBean implements Serializable {
     private final static String[] manufacturers;
     private List<Car> carsSmall;
     private SelectItem[] manufacturerOptions;
+    private Car selectedCar; 
 
     static {
         colors = new String[10];
@@ -64,6 +65,14 @@ public class CarBean implements Serializable {
             list.add(new Car(getRandomModel(), getRandomYear(), getRandomManufacturer(), getRandomColor()));
         }
     }
+    
+    public Car getSelectedCar() {  
+        return selectedCar;  
+    }  
+  
+    public void setSelectedCar(Car selectedCar) {  
+        this.selectedCar = selectedCar;  
+    } 
 
     public List<Car> getCarsSmall() {
         return carsSmall;

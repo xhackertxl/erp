@@ -59,8 +59,6 @@
         </p:dialog>
         <p:layout fullPage="true">
             <p:layoutUnit position="center">
-
-
                 <p:fieldset legend="Данные заказа">
                     <h:form>
                         <p:panelGrid style="text-align:right;width: 100%">                           
@@ -112,8 +110,9 @@
                     </h:form>
                 </p:fieldset>
                 <p:fieldset legend="Корзина заказа">
-                    <p:commandButton value="Добавить товар" icon="ui-icon-disk" title="Добавить товар" style="margin-bottom:10px;" onclick="dlg2.show();" /> 
-
+                    <h:form>
+                        <p:commandButton value="Добавить товар" icon="ui-icon-disk" title="Добавить товар" style="margin-bottom:10px;" onclick="dlg2.show();" /> 
+                    </h:form>
                     <h:form>  
                         <p:dataTable id="basic" var="car" value="#{carBean.carsSmall}" editable="true">  
                             <p:column id="modelHeader">  
@@ -163,7 +162,7 @@
                 <ui:include src="./leftMenu.xhtml" />
             </p:layoutUnit>
 
-            <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">
+            <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" visible="false" closable="true" collapsible="true">
                 <h:outputText value="South unit content." />
             </p:layoutUnit>
 
