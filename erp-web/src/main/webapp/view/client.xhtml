@@ -11,6 +11,31 @@
                 <ui:include src="./head.xhtml" />
             </f:facet>
         </h:head>
+
+        <h:form id="form2">
+            <p:dialog header="Карточка клиента" widgetVar="carDialog" resizable="true" id="carDlg"  
+                      showEffect="fade" hideEffect="explode" modal="true" width="900" height="500" >  
+
+                <h:panelGrid id="display" columns="2" cellpadding="4" >  
+
+                    <h:outputText value="Model:" />  
+                    <h:outputText value="#{carBean.selectedCar.model}" style="font-weight:bold"/>  
+
+                    <h:outputText value="Year:" />  
+                    <h:outputText value="#{carBean.selectedCar.year}" style="font-weight:bold"/>  
+
+
+                    <h:outputText value="Manufacturer:" />  
+                    <h:outputText value="#{carBean.selectedCar.manufacturer}" style="font-weight:bold"/>  
+
+                    <h:outputText value="Color:" />  
+                    <h:outputText value="#{carBean.selectedCar.color}" style="font-weight:bold"/>  
+
+                </h:panelGrid>  
+
+            </p:dialog>
+        </h:form>
+
         <p:layout fullPage="true">
             <p:layoutUnit position="center">
                 <p:tabView id="tabView">  
@@ -18,8 +43,8 @@
                         <p:panelGrid style="width:100%">
                             <p:row>  
                                 <p:column style="width:90%;">
-                                    <h:form>  
-                                        <p:dataTable id="basic" var="car" value="#{carBean.carsSmall}" paginator="true" rows="10"  
+                                    <h:form id="form1">  
+                                        <p:dataTable id="cars" var="car" value="#{carBean.carsSmall}" paginator="true" rows="10"  
                                                      paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
                                                      rowsPerPageTemplate="5,10,15" rowKey="#{car.model}"  selection="#{carBean.selectedCar}" selectionMode="single">  
 
@@ -56,8 +81,15 @@
                                                     Color  
                                                 </f:facet>  
                                                 <h:outputText value="#{car.color}" />  
-                                            </p:column>                             
-                                        </p:dataTable>  
+                                            </p:column>  
+                                            <p:column style="width:40px">  
+                                                <h:panelGrid columns="3" styleClass="actions" cellpadding="2">  
+                                                    <p:commandButton id="selectButton" update=":form2:display" oncomplete="carDialog.show()" icon="ui-icon-search" title="View">  
+                                                        <f:setPropertyActionListener value="#{car}" target="#{carBean.selectedCar}" />  
+                                                    </p:commandButton>  
+                                                </h:panelGrid>  
+                                            </p:column>
+                                        </p:dataTable> 
                                     </h:form>
                                 </p:column>  
                                 <p:column style="vertical-align: top;">
@@ -75,7 +107,7 @@
                             </p:row>
                         </p:panelGrid>
                     </p:tab>  
-                    
+
                     <p:tab id="tab5" title="Договора">  
                         <p:panelGrid style="width:100%">
                             <p:row>  
