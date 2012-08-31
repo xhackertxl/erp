@@ -7,11 +7,23 @@
 
     <f:view contentType="text/html">
         <h:form>
-
+            <p:themeSwitcher style="width:165px" id="defaultSwitcher">  
+                <f:selectItem itemLabel="Choose Theme" itemValue="#{themeSwitcherBean.theme}" />
+                <f:selectItems value="#{themeSwitcherBean.advancedThemes}" var="theme" itemLabel="#{theme.name}" itemValue="#{theme}"/>
+                <p:ajax listener="#{themeSwitcherBean.saveTheme}" /> 
+            </p:themeSwitcher> 
+        </h:form>
+        <h:form>
             <p:growl id="messages"/>
             <p:menubar >
                 <p:menuitem value="Главная" url="main.xhtml" icon="ui-icon-document"/>
+
                 <p:submenu label="Заказы" icon="ui-icon-pencil">
+                    <p:menuitem value="Розничный заказ" url="order.xhtml" icon="ui-icon-arrowreturnthick-1-w" />
+                    <p:menuitem value="Оптовый заказ" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                </p:submenu>
+
+                <p:submenu label="Закупка" icon="ui-icon-pencil">
                     <p:menuitem value="Розничный заказ" url="order.xhtml" icon="ui-icon-arrowreturnthick-1-w" />
                     <p:menuitem value="Оптовый заказ" url="#" icon="ui-icon-arrowreturnthick-1-e" />
                 </p:submenu>
@@ -28,26 +40,17 @@
                     <p:menuitem value="Quit" url="#" />
                 </p:submenu>
 
-                <p:submenu label="Управление клиентами" icon="ui-icon-pencil">
-                    <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
-                    <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
-                </p:submenu>
+                <p:menuitem value="Управление клиентами" url="client.xhtml" icon="ui-icon-pencil" />
 
-                <p:submenu label="Статистика" icon="ui-icon-document">
-                    <p:menuitem value="ui-icon-contact" url="statistic.xhtml" icon="ui-icon-arrowreturnthick-1-w" />
-                </p:submenu>
+                <p:menuitem value="Управление финансами" url="money.xhtml" icon="ui-icon-pencil" />
 
-                <p:submenu label="Help" icon="ui-icon-help">
-                    <p:menuitem value="Contents" url="#" />
-                    <p:submenu label="Search" icon="ui-icon-search">
-                        <p:submenu label="Text">
-                            <p:menuitem value="Workspace" url="#" />
-                        </p:submenu>
-                        <p:menuitem value="File" url="#" />
-                    </p:submenu>
-                </p:submenu>
+                <p:menuitem value="Статистика" url="statistic.xhtml" icon="ui-icon-pencil" />
 
-                <p:submenu label="Actions" icon="ui-icon-gear">
+                <p:menuitem value="Внутренние документы" url="document.xhtml" icon="ui-icon-pencil" />
+
+                <p:menuitem value="Распоряжения" url="decree.xhtml" icon="ui-icon-pencil" />
+
+                <p:submenu label="Справочники" icon="ui-icon-gear">
                     <p:submenu label="Ajax" icon="ui-icon-refresh">
                         <p:menuitem value="Save" icon="ui-icon-disk" />
                         <p:menuitem value="Update" icon="ui-icon-arrowrefresh-1-w" />
@@ -57,9 +60,7 @@
                     </p:submenu>
                 </p:submenu>
 
-                <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
             </p:menubar>
-
         </h:form>
 
     </f:view>

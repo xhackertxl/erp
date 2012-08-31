@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-    <artifactId>erp</artifactId>
-    <groupId>com.veralex</groupId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
+        <artifactId>erp</artifactId>
+        <groupId>com.veralex</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
     <groupId>com.veralex</groupId>
     <artifactId>erp-web</artifactId>
@@ -26,6 +26,35 @@
             <artifactId>primefaces</artifactId>
             <version>3.3.1</version>
         </dependency>
+        <dependency>  
+            <groupId>org.primefaces.themes</groupId>  
+            <artifactId>cupertino</artifactId>  
+            <version>1.0.8</version>  
+        </dependency> 
+        
+        <dependency>  
+            <groupId>org.primefaces.themes</groupId>  
+            <artifactId>redmond</artifactId>  
+            <version>1.0.8</version>  
+        </dependency>
+        
+        <dependency>  
+            <groupId>org.primefaces.themes</groupId>  
+            <artifactId>humanity</artifactId>  
+            <version>1.0.8</version>  
+        </dependency>
+        
+        <dependency>  
+            <groupId>org.primefaces.themes</groupId>  
+            <artifactId>sunny</artifactId>  
+            <version>1.0.8</version>  
+        </dependency> 
+        
+        <dependency>  
+            <groupId>org.primefaces.themes</groupId>  
+            <artifactId>bootstrap</artifactId>  
+            <version>1.0.8</version>  
+        </dependency> 
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>

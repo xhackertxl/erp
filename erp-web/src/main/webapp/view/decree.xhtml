@@ -10,11 +10,11 @@
             <f:facet name="first">
                 <ui:include src="./head.xhtml" />
             </f:facet>
-        </h:head>        
+        </h:head>
         <p:layout fullPage="true">
             <p:layoutUnit position="center">
                 <p:tabView id="tabView">  
-                    <p:tab id="tab1" title="Статистика по сделкам">
+                    <p:tab id="tab1" title="На компанию">
                         <p:panelGrid style="width:100%">
                             <p:row>  
                                 <p:column style="width:90%;">
@@ -76,7 +76,7 @@
                         </p:panelGrid>
                     </p:tab>  
                     
-                    <p:tab id="tab2" title="Статистика по менеджерам">  
+                    <p:tab id="tab5" title="Личные">  
                         <p:panelGrid style="width:100%">
                             <p:row>  
                                 <p:column style="width:90%;">
@@ -135,74 +135,13 @@
                                     </h:form>
                                 </p:column>  
                             </p:row>
-                        </p:panelGrid>
+                        </p:panelGrid>  
                     </p:tab>
 
-                    <p:tab id="tab3" title="График продаж за текущий квартал">  
-                        <p:panelGrid style="width:100%">
-                            <p:row>  
-                                <p:column style="width:90%;">
-                                    <h:form>  
-                                        <p:dataTable id="basic" var="car" value="#{carBean.carsSmall}" paginator="true" rows="10"  
-                                                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
-                                                     rowsPerPageTemplate="5,10,15" rowKey="#{car.model}"  selection="#{carBean.selectedCar}" selectionMode="single">  
+                </p:tabView>  
 
-                                            <f:facet name="header">  
-                                                <p:outputPanel>  
-                                                    <h:outputText value="Search all fields:" />  
-                                                    <p:inputText id="globalFilter" onkeyup="carsTable.filter()" style="width:150px" />  
-                                                </p:outputPanel>  
-                                            </f:facet>  
 
-                                            <p:column id="modelHeader" filterBy="#{car.model}" headerText="Model" footerText="contains" filterMatchMode="contains">  
-                                                <f:facet name="header">  
-                                                    Model  
-                                                </f:facet>  
-                                                <h:outputText value="#{car.model}" />
-                                            </p:column>  
-
-                                            <p:column filterBy="#{car.year}" headerText="Year" footerText="startsWith">  
-                                                <f:facet name="header">  
-                                                    Year  
-                                                </f:facet>  
-                                                <h:outputText value="#{car.year}" />  
-                                            </p:column>  
-
-                                            <p:column filterBy="#{car.manufacturer}" headerText="Manufacturer" footerText="exact" filterOptions="#{carBean.manufacturerOptions}" filterMatchMode="exact" >  
-                                                <f:facet name="header">  
-                                                    Manufacturer  
-                                                </f:facet>  
-                                                <h:outputText value="#{car.manufacturer}" />  
-                                            </p:column>  
-
-                                            <p:column filterBy="#{car.color}" headerText="Color" footerText="endsWith" filterMatchMode="endsWith">  
-                                                <f:facet name="header">  
-                                                    Color  
-                                                </f:facet>  
-                                                <h:outputText value="#{car.color}" />  
-                                            </p:column>                             
-                                        </p:dataTable>  
-                                    </h:form>
-                                </p:column>  
-                                <p:column style="vertical-align: top;">
-                                    <h:form>
-                                        <p:menu>
-                                            <p:submenu style="height: 0px;border: 0px solid #ffffff;">
-                                                <p:menuitem value="Добавить нового" url="#" />
-                                                <p:menuitem value="Задачи" url="#" />
-                                                <p:menuitem value="Добавить примечение" url="#" />
-                                                <p:menuitem value="Пометить на удаление" url="#" />
-                                            </p:submenu>
-                                        </p:menu>
-                                    </h:form>
-                                </p:column>  
-                            </p:row>
-                        </p:panelGrid>
-                    </p:tab>
-                    
-                </p:tabView>   
             </p:layoutUnit>
-
             <p:layoutUnit position="west" size="200" header="Быстрое меню" resizable="true" closable="true" collapsible="true">
                 <ui:include src="./leftMenu.xhtml" />
             </p:layoutUnit>
@@ -214,14 +153,15 @@
 
             <p:layoutUnit position="north" resizable="true" closable="true" collapsible="true">
                 <img src="./img/s.jpg" height="70" /> ERP 
-                <ui:include src="./mainMenu.xhtml" />                
+                <ui:include src="./mainMenu.xhtml" />
             </p:layoutUnit>
 
-            <p:layoutUnit position="east" size="200" header="Right" resizable="true" visible="false" closable="true" collapsible="true" effect="drop">
-                <h:outputText value="Right unit content." />
+            <p:layoutUnit position="east" size="200" visible="false" header="Быстрые действия" resizable="true" closable="true" collapsible="true" effect="drop">
+
             </p:layoutUnit>
 
         </p:layout>
 
     </f:view>
 </html>
+

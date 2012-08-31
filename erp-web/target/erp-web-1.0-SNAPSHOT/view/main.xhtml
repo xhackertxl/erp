@@ -7,25 +7,10 @@
 
     <f:view contentType="text/html">
         <h:head>
-
             <f:facet name="first">
-                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>PrimeFaces</title>
-                <style type="text/css">
-                    .ui-layout-north {
-                        z-index:20 !important;
-                        overflow:visible !important;;
-                    }
-
-                    .ui-layout-north .ui-layout-unit-content {
-                        overflow:visible !important;
-                    }
-                    .ui-widget {
-                        font-size: 12px !important;
-                    }
-                </style>
+                <ui:include src="./head.xhtml" />
             </f:facet>
-        </h:head>
+        </h:head>        
         <p:layout fullPage="true">
             <p:layoutUnit position="center">
                 <h:form>
@@ -73,7 +58,7 @@
 
 
             <p:layoutUnit position="north" resizable="true" closable="true" collapsible="true">
-                <img src="./img/s.jpg" height="70" /> ERP 
+                <img src="./img/s.jpg" height="70" /> ERP                
                 <ui:include src="./mainMenu.xhtml" />
             </p:layoutUnit>
 
