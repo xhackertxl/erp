@@ -16,50 +16,39 @@
         <h:form>
             <p:growl id="messages"/>
             <p:menubar >
-                <p:menuitem value="Главная" url="main.xhtml" icon="ui-icon-document"/>
+                <p:menuitem value="Главная" url="main.xhtml" icon="ui-icon-home"/>
+                
+                <p:menuitem value="Заказ" url="order.xhtml" icon="ui-icon-cart" />
+                
+                <p:menuitem value="Закупка" url="supply.xhtml" icon="ui-icon-shuffle" />
+                
+                <p:menuitem value="Складской учет" url="goods.xhtml" icon="ui-icon-suitcase" />
 
-                <p:submenu label="Заказы" icon="ui-icon-pencil">
-                    <p:menuitem value="Розничный заказ" url="order.xhtml" icon="ui-icon-arrowreturnthick-1-w" />
-                    <p:menuitem value="Оптовый заказ" url="#" icon="ui-icon-arrowreturnthick-1-e" />
-                </p:submenu>
-
-                <p:submenu label="Закупка" icon="ui-icon-pencil">
-                    <p:menuitem value="Розничный заказ" url="order.xhtml" icon="ui-icon-arrowreturnthick-1-w" />
-                    <p:menuitem value="Оптовый заказ" url="#" icon="ui-icon-arrowreturnthick-1-e" />
-                </p:submenu>
-
-                <p:submenu label="Складской учет" icon="ui-icon-pencil">
-                    <p:menuitem value="Номенклатура" url="#" icon="ui-icon-arrowreturnthick-1-w" />
-                    <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
-                    <p:submenu label="New" icon="ui-icon-contact">
-                        <p:menuitem value="Project" url="#" />
-                        <p:menuitem value="Other" url="#" />
-                    </p:submenu>
-                    <p:menuitem value="Open" url="#" />
-                    <p:separator />
-                    <p:menuitem value="Quit" url="#" />
-                </p:submenu>
-
-                <p:menuitem value="Управление клиентами" url="client.xhtml" icon="ui-icon-pencil" />
+                <p:menuitem value="Управление клиентами" url="client.xhtml" icon="ui-icon-person" />
 
                 <p:menuitem value="Управление финансами" url="money.xhtml" icon="ui-icon-pencil" />
 
-                <p:menuitem value="Статистика" url="statistic.xhtml" icon="ui-icon-pencil" />
+                <p:menuitem value="Статистика" url="statistic.xhtml" icon="ui-icon-clipboard" />
 
-                <p:menuitem value="Внутренние документы" url="document.xhtml" icon="ui-icon-pencil" />
+                <p:menuitem value="Внутренние документы" url="document.xhtml" icon="ui-icon-document" />
 
-                <p:menuitem value="Распоряжения" url="decree.xhtml" icon="ui-icon-pencil" />
+                <p:menuitem value="Распоряжения" url="decree.xhtml" icon="ui-icon-notice" />
 
                 <p:submenu label="Справочники" icon="ui-icon-gear">
-                    <p:submenu label="Ajax" icon="ui-icon-refresh">
-                        <p:menuitem value="Save" icon="ui-icon-disk" />
-                        <p:menuitem value="Update" icon="ui-icon-arrowrefresh-1-w" />
-                    </p:submenu>
-                    <p:submenu label="Non-Ajax" icon="ui-icon-newwin">
-                        <p:menuitem value="Delete"  icon="ui-icon-close" />
-                    </p:submenu>
+                    <p:menuitem value="Города" url="decree.xhtml" icon="ui-icon-wrench" />
+                    <p:menuitem value="Интернет-магазины" url="decree.xhtml" icon="ui-icon-wrench" />
+                    <p:menuitem value="Единицы измерения" url="decree.xhtml" icon="ui-icon-wrench" />
+                    <p:menuitem value="Валюты" url="decree.xhtml" icon="ui-icon-wrench" />
+                    <p:menuitem value="Склады" url="decree.xhtml" icon="ui-icon-wrench" />
+                    <p:menuitem value="Статус заказа" url="decree.xhtml" icon="ui-icon-wrench" />
+                    <p:menuitem value="Статусы доставки" url="decree.xhtml" icon="ui-icon-wrench" />
+                    <p:menuitem value="Тип заказа" url="decree.xhtml" icon="ui-icon-wrench" />
+                    <p:menuitem value="ГТД" url="decree.xhtml" icon="ui-icon-wrench" />
+                    <p:menuitem value="Типы контактов" url="decree.xhtml" icon="ui-icon-wrench" />
+                    <p:menuitem value="Метрополитен" url="decree.xhtml" icon="ui-icon-wrench" />
+                    <p:menuitem value="Метрополитен" url="decree.xhtml" icon="ui-icon-wrench" />
                 </p:submenu>
-
+                <p:menuitem value="Помощь" url="decree.xhtml" icon="ui-icon-lightbulb" />
             </p:menubar>
         </h:form>
 

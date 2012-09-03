@@ -1,0 +1,396 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <ui:include src="./head.xhtml" />
+            </f:facet>
+        </h:head>
+        <p:layout fullPage="true">
+            <p:layoutUnit position="center">
+                <p:tabView id="tabView">  
+                    <p:tab id="tab1" title="Номенклатура">
+                        <p:panelGrid style="width:100%">
+                            <p:row>  
+                                <p:column style="width:90%;">
+                                    <h:form>  
+                                        <p:dataTable id="basic" var="car" value="#{carBean.carsSmall}" paginator="true" rows="10"  
+                                                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                                                     rowsPerPageTemplate="5,10,15" rowKey="#{car.model}"  selection="#{carBean.selectedCar}" selectionMode="single">  
+
+                                            <f:facet name="header">  
+                                                <p:outputPanel>  
+                                                    <h:outputText value="Search all fields:" />  
+                                                    <p:inputText id="globalFilter" onkeyup="carsTable.filter()" style="width:150px" />  
+                                                </p:outputPanel>  
+                                            </f:facet>  
+
+                                            <p:column id="modelHeader" filterBy="#{car.model}" headerText="Model" footerText="contains" filterMatchMode="contains">  
+                                                <f:facet name="header">  
+                                                    Model  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.model}" />
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.year}" headerText="Year" footerText="startsWith">  
+                                                <f:facet name="header">  
+                                                    Year  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.year}" />  
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.manufacturer}" headerText="Manufacturer" footerText="exact" filterOptions="#{carBean.manufacturerOptions}" filterMatchMode="exact" >  
+                                                <f:facet name="header">  
+                                                    Manufacturer  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.manufacturer}" />  
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.color}" headerText="Color" footerText="endsWith" filterMatchMode="endsWith">  
+                                                <f:facet name="header">  
+                                                    Color  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.color}" />  
+                                            </p:column>                             
+                                        </p:dataTable>  
+                                    </h:form>
+                                </p:column>  
+                                <p:column style="vertical-align: top;">
+                                    <h:form>
+                                        <p:tree value="#{treeBean.root}" var="node" dynamic="true" cache="true" id="tree1">  
+                                            <p:treeNode>  
+                                                <p:commandLink >  
+                                                    <h:outputText value="#{node}"/> 
+                                                </p:commandLink>  
+                                            </p:treeNode>  
+                                        </p:tree> 
+                                    </h:form>
+                                </p:column>  
+                            </p:row>
+                        </p:panelGrid>
+                    </p:tab>  
+
+                    <p:tab id="tab2" title="Товарные остатки">  
+                        <p:panelGrid style="width:100%">
+                            <p:row>  
+                                <p:column style="width:90%;">
+                                    <h:form>  
+                                        <p:dataTable id="basic" var="car" value="#{carBean.carsSmall}" paginator="true" rows="10"  
+                                                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                                                     rowsPerPageTemplate="5,10,15" rowKey="#{car.model}"  selection="#{carBean.selectedCar}" selectionMode="single">  
+
+                                            <f:facet name="header">  
+                                                <p:outputPanel>  
+                                                    <h:outputText value="Search all fields:" />  
+                                                    <p:inputText id="globalFilter" onkeyup="carsTable.filter()" style="width:150px" />  
+                                                </p:outputPanel>  
+                                            </f:facet>  
+
+                                            <p:column id="modelHeader" filterBy="#{car.model}" headerText="Model" footerText="contains" filterMatchMode="contains">  
+                                                <f:facet name="header">  
+                                                    Model  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.model}" />
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.year}" headerText="Year" footerText="startsWith">  
+                                                <f:facet name="header">  
+                                                    Year  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.year}" />  
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.manufacturer}" headerText="Manufacturer" footerText="exact" filterOptions="#{carBean.manufacturerOptions}" filterMatchMode="exact" >  
+                                                <f:facet name="header">  
+                                                    Manufacturer  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.manufacturer}" />  
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.color}" headerText="Color" footerText="endsWith" filterMatchMode="endsWith">  
+                                                <f:facet name="header">  
+                                                    Color  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.color}" />  
+                                            </p:column>                             
+                                        </p:dataTable>  
+                                    </h:form>
+                                </p:column>  
+                                <p:column style="vertical-align: top;">
+                                    <h:form>
+                                        <p:tree value="#{treeBean.root}" var="node" dynamic="true" cache="true" id="tree3">  
+                                            <p:treeNode>  
+                                                <h:outputText value="Node 2"/>  
+                                            </p:treeNode>  
+                                        </p:tree> 
+                                    </h:form>
+                                </p:column>  
+                            </p:row>
+                        </p:panelGrid>  
+                    </p:tab>  
+                    
+                    <p:tab id="tab5" title="Списания">  
+                        <p:panelGrid style="width:100%">
+                            <p:row>  
+                                <p:column style="width:90%;">
+                                    <h:form>  
+                                        <p:dataTable id="basic" var="car" value="#{carBean.carsSmall}" paginator="true" rows="10"  
+                                                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                                                     rowsPerPageTemplate="5,10,15" rowKey="#{car.model}"  selection="#{carBean.selectedCar}" selectionMode="single">  
+
+                                            <f:facet name="header">  
+                                                <p:outputPanel>  
+                                                    <h:outputText value="Search all fields:" />  
+                                                    <p:inputText id="globalFilter" onkeyup="carsTable.filter()" style="width:150px" />  
+                                                </p:outputPanel>  
+                                            </f:facet>  
+
+                                            <p:column id="modelHeader" filterBy="#{car.model}" headerText="Model" footerText="contains" filterMatchMode="contains">  
+                                                <f:facet name="header">  
+                                                    Model  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.model}" />
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.year}" headerText="Year" footerText="startsWith">  
+                                                <f:facet name="header">  
+                                                    Year  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.year}" />  
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.manufacturer}" headerText="Manufacturer" footerText="exact" filterOptions="#{carBean.manufacturerOptions}" filterMatchMode="exact" >  
+                                                <f:facet name="header">  
+                                                    Manufacturer  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.manufacturer}" />  
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.color}" headerText="Color" footerText="endsWith" filterMatchMode="endsWith">  
+                                                <f:facet name="header">  
+                                                    Color  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.color}" />  
+                                            </p:column>                             
+                                        </p:dataTable>  
+                                    </h:form>
+                                </p:column>  
+                                <p:column style="vertical-align: top;">
+                                    <h:form>
+                                        <p:tree value="#{treeBean.root}" var="node" dynamic="true" cache="true" id="tree2">  
+                                            <p:treeNode>  
+                                                <h:outputText value="Node 2"/>  
+                                            </p:treeNode>  
+                                        </p:tree> 
+                                    </h:form>
+                                </p:column>  
+                            </p:row>
+                        </p:panelGrid>  
+                    </p:tab>
+
+                    <p:tab id="tab3" title="Поступление товара">  
+                        <p:panelGrid style="width:100%">
+                            <p:row>  
+                                <p:column style="width:90%;">
+                                    <h:form>  
+                                        <p:dataTable id="basic" var="car" value="#{carBean.carsSmall}" paginator="true" rows="10"  
+                                                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                                                     rowsPerPageTemplate="5,10,15" rowKey="#{car.model}"  selection="#{carBean.selectedCar}" selectionMode="single">  
+
+                                            <f:facet name="header">  
+                                                <p:outputPanel>  
+                                                    <h:outputText value="Search all fields:" />  
+                                                    <p:inputText id="globalFilter" onkeyup="carsTable.filter()" style="width:150px" />  
+                                                </p:outputPanel>  
+                                            </f:facet>  
+
+                                            <p:column id="modelHeader" filterBy="#{car.model}" headerText="Model" footerText="contains" filterMatchMode="contains">  
+                                                <f:facet name="header">  
+                                                    Model  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.model}" />
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.year}" headerText="Year" footerText="startsWith">  
+                                                <f:facet name="header">  
+                                                    Year  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.year}" />  
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.manufacturer}" headerText="Manufacturer" footerText="exact" filterOptions="#{carBean.manufacturerOptions}" filterMatchMode="exact" >  
+                                                <f:facet name="header">  
+                                                    Manufacturer  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.manufacturer}" />  
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.color}" headerText="Color" footerText="endsWith" filterMatchMode="endsWith">  
+                                                <f:facet name="header">  
+                                                    Color  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.color}" />  
+                                            </p:column>                             
+                                        </p:dataTable>  
+                                    </h:form>
+                                </p:column>  
+                                <p:column style="vertical-align: top;">
+                                    <h:form>
+                                        <p:tree value="#{treeBean.root}" var="node" dynamic="true" cache="true" id="tree4">  
+                                            <p:treeNode>  
+                                                <h:outputText value="Node 2"/>  
+                                            </p:treeNode>  
+                                        </p:tree> 
+                                    </h:form>
+                                </p:column>  
+                            </p:row>
+                        </p:panelGrid> 
+                    </p:tab>
+                    
+                    <p:tab id="tab6" title="Инвентаризация">  
+                        <p:panelGrid style="width:100%">
+                            <p:row>  
+                                <p:column style="width:90%;">
+                                    <h:form>  
+                                        <p:dataTable id="basic" var="car" value="#{carBean.carsSmall}" paginator="true" rows="10"  
+                                                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                                                     rowsPerPageTemplate="5,10,15" rowKey="#{car.model}"  selection="#{carBean.selectedCar}" selectionMode="single">  
+
+                                            <f:facet name="header">  
+                                                <p:outputPanel>  
+                                                    <h:outputText value="Search all fields:" />  
+                                                    <p:inputText id="globalFilter" onkeyup="carsTable.filter()" style="width:150px" />  
+                                                </p:outputPanel>  
+                                            </f:facet>  
+
+                                            <p:column id="modelHeader" filterBy="#{car.model}" headerText="Model" footerText="contains" filterMatchMode="contains">  
+                                                <f:facet name="header">  
+                                                    Model  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.model}" />
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.year}" headerText="Year" footerText="startsWith">  
+                                                <f:facet name="header">  
+                                                    Year  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.year}" />  
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.manufacturer}" headerText="Manufacturer" footerText="exact" filterOptions="#{carBean.manufacturerOptions}" filterMatchMode="exact" >  
+                                                <f:facet name="header">  
+                                                    Manufacturer  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.manufacturer}" />  
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.color}" headerText="Color" footerText="endsWith" filterMatchMode="endsWith">  
+                                                <f:facet name="header">  
+                                                    Color  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.color}" />  
+                                            </p:column>                             
+                                        </p:dataTable>  
+                                    </h:form>
+                                </p:column>  
+                                <p:column style="vertical-align: top;">
+                                    <h:form>
+                                        <p:tree value="#{treeBean.root}" var="node" dynamic="true" cache="true" id="tree2">  
+                                            <p:treeNode>  
+                                                <h:outputText value="Node 2"/>  
+                                            </p:treeNode>  
+                                        </p:tree> 
+                                    </h:form>
+                                </p:column>  
+                            </p:row>
+                        </p:panelGrid>  
+                    </p:tab>
+                    
+                    <p:tab id="tab7" title="Внутренние перемещения">  
+                        <p:panelGrid style="width:100%">
+                            <p:row>  
+                                <p:column style="width:90%;">
+                                    <h:form>  
+                                        <p:dataTable id="basic" var="car" value="#{carBean.carsSmall}" paginator="true" rows="10"  
+                                                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                                                     rowsPerPageTemplate="5,10,15" rowKey="#{car.model}"  selection="#{carBean.selectedCar}" selectionMode="single">  
+
+                                            <f:facet name="header">  
+                                                <p:outputPanel>  
+                                                    <h:outputText value="Search all fields:" />  
+                                                    <p:inputText id="globalFilter" onkeyup="carsTable.filter()" style="width:150px" />  
+                                                </p:outputPanel>  
+                                            </f:facet>  
+
+                                            <p:column id="modelHeader" filterBy="#{car.model}" headerText="Model" footerText="contains" filterMatchMode="contains">  
+                                                <f:facet name="header">  
+                                                    Model  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.model}" />
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.year}" headerText="Year" footerText="startsWith">  
+                                                <f:facet name="header">  
+                                                    Year  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.year}" />  
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.manufacturer}" headerText="Manufacturer" footerText="exact" filterOptions="#{carBean.manufacturerOptions}" filterMatchMode="exact" >  
+                                                <f:facet name="header">  
+                                                    Manufacturer  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.manufacturer}" />  
+                                            </p:column>  
+
+                                            <p:column filterBy="#{car.color}" headerText="Color" footerText="endsWith" filterMatchMode="endsWith">  
+                                                <f:facet name="header">  
+                                                    Color  
+                                                </f:facet>  
+                                                <h:outputText value="#{car.color}" />  
+                                            </p:column>                             
+                                        </p:dataTable>  
+                                    </h:form>
+                                </p:column>  
+                                <p:column style="vertical-align: top;">
+                                    <h:form>
+                                        <p:tree value="#{treeBean.root}" var="node" dynamic="true" cache="true" id="tree2">  
+                                            <p:treeNode>  
+                                                <h:outputText value="Node 2"/>  
+                                            </p:treeNode>  
+                                        </p:tree> 
+                                    </h:form>
+                                </p:column>  
+                            </p:row>
+                        </p:panelGrid>  
+                    </p:tab>
+                </p:tabView> 
+
+            </p:layoutUnit>
+            <p:layoutUnit position="west" size="200" header="Быстрое меню" resizable="true" closable="true" collapsible="true">
+                <ui:include src="./leftMenu.xhtml" />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">
+                <h:outputText value="South unit content." />
+            </p:layoutUnit>
+
+
+            <p:layoutUnit position="north" resizable="true" closable="true" collapsible="true">
+                <img src="./img/s.jpg" height="70" /> ERP 
+                <ui:include src="./mainMenu.xhtml" />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="east" size="200" visible="false" header="Быстрые действия" resizable="true" closable="true" collapsible="true" effect="drop">
+
+            </p:layoutUnit>
+
+        </p:layout>
+
+    </f:view>
+</html>
