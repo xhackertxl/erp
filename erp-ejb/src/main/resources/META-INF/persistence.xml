@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="NewPersistenceUnit">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>com.veralex.entity.City</class>
+        <class>com.veralex.entity.Company</class>
+        <class>com.veralex.entity.CompanyType</class>
+        <class>com.veralex.entity.Domen</class>
+        <class>com.veralex.entity.Underground</class>
+        <class>com.veralex.entity.User</class>
+        <class>com.veralex.entity.UserContact</class>
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://127.0.0.1:5432/javacrm"/>
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="hibernate.connection.username" value="postgres"/>
+            <property name="hibernate.connection.password" value="pas"/>
+            <property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hbm2ddl.auto" value="update"/>
+            <property name="dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+        </properties>
+    </persistence-unit>
+</persistence>
